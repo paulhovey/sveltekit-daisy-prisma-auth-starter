@@ -1,0 +1,29 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch server",
+			"request": "launch",
+			"runtimeArgs": ["run-script", "start"],
+			"runtimeExecutable": "npm",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node",
+			"console": "integratedTerminal"
+		},
+
+		{
+			"type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Launch Firefox",
+			"url": "http://localhost:5173",
+			"webRoot": "${workspaceFolder}"
+		}
+	],
+	"compounds": [
+		{
+			"name": "Both",
+			"configurations": ["Launch server", "Launch Firefox"]
+		}
+	]
+}
